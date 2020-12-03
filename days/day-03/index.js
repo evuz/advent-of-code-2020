@@ -44,7 +44,6 @@ export function run() {
     { x: 1, y: 2 }
   ];
   response = iterations.reduce((acc, iteration) => {
-    console.log(iteration);
     return acc * checkPath(arr, iteration.x, iteration.y);
   }, 1);
   console.log(response);
