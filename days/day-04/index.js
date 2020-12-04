@@ -25,16 +25,14 @@ function parsePassports(str) {
 }
 
 function checkPassport(passport, validate = false) {
-  const keys = Object.keys(passport);
   const fields = REQUIRED_FIELDS.filter(requiredField => {
-    const key = keys.find(k => k === requiredField.key);
-    if (!key) {
+    const key = requiredField.key;
+    if (!passport[key]) {
       return false;
     }
 
     if (!validate) return true;
     const v = passport[key].match(requiredField.valid);
-
     return v;
   });
   return fields.length === REQUIRED_FIELDS.length;
@@ -42,7 +40,6 @@ function checkPassport(passport, validate = false) {
 
 function checkPassports(str, validate = false) {
   const passports = parsePassports(str);
-  const passport = passports[0];
   return passports.filter(passport => checkPassport(passport, validate));
 }
 
