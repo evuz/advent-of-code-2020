@@ -2,5 +2,14 @@
   "name": "js",
   "version": "0.0.0",
   "private": true,
-  "dependencies": {}
+  "type": "module",
+  "dependencies": {},
+  "scripts": {
+    "start": "npm run build && nodemon ./scripts/.start.js",
+    "build": "node ./scripts/build.js"
+  },
+  "devDependencies": {
+    "inquirer": "^7.3.3",
+    "nodemon": "^2.0.6"
+  }
 }
