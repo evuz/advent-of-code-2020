@@ -1,4 +1,4 @@
-import { input } from "./input";
+import { input } from "./input.js";
 
 const REQUIRED_FIELDS = [
   { key: "byr", valid: /^19([2-9][0-9])?$|^200([0-2])?$/ },

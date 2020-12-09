@@ -1,4 +1,4 @@
-import { input } from "./input";
+import { input } from "./input.js";
 
 function part1() {
   function findValidPassword(arr) {
